@@ -1,0 +1,48 @@
+.heading{
+  height: 100vh;
+  .menu-bar{
+    height: 100px;
+}
+
+  .head__back-image{
+    height: 100%;
+    width: 100%;
+    background-image: url('/images/cover3.jpg');
+    background-size: cover;
+    .rgba{
+      background: rgba(145,145,145,0.5);
+      height: 100%;
+      .center-title{
+        color: #000000;
+        height: 300px;
+        line-height: 300px;
+        text-align: center;
+        font-family: 'Mv Boli','Zapfino',sans-serif;
+        font-weight: bold;
+        font-size: 60px;
+      }
+      .outline{
+        color: #000000;
+        text-align: center;
+        height: 80px;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+.topics{
+  height: 800px;
+  width: 100%;
+  .new-topic{
+    .sub-title{
+      text-align: center;
+      line-height: 110px;
+      letter-spacing: 0.2em;
+      font-weight: bold;
+      height: 110px;
+      font-size: 30px;
+      font-family: 'Mv Boli','Zapfino',sans-serif;
+    }
+  }
+}
