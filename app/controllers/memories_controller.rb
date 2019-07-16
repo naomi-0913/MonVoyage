@@ -1,10 +1,10 @@
-class MemoryController < ApplicationController
+class MemoriesController < ApplicationController
   before_action :set_memory, only: [:show, :edit, :update, :destroy]
 
   # GET /memories
   # GET /memories.json
   def index
-    # @memories = Memory.all
+    @memories = Memory.all
   end
 
   # GET /memories/1
@@ -28,7 +28,7 @@ class MemoryController < ApplicationController
 
     respond_to do |format|
       if @memory.save
-        format.html { redirect_to root_path, notice: 'Memory was successfully created.' }
+        format.html { redirect_to @memory, notice: 'Memory was successfully created.' }
         format.json { render :show, status: :created, location: @memory }
       else
         format.html { render :new }
