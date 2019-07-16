@@ -1,42 +1,48 @@
-<%= form_with(model: memory, local: true) do |form| %>
-  <% if memory.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(memory.errors.count, "error") %> prohibited this memory from being saved:</h2>
+<div class="memory-form">
+  <div class="back-color">
+    <%= form_with(model: memory, local: true) do |form| %>
+      <% if memory.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(memory.errors.count, "error") %> prohibited this memory from being saved:</h2>
 
-      <ul>
-      <% memory.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% memory.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country %>
-  </div>
+      <div class="field">
+        <%= form.label :country %>
+        <%= form.text_field :country %>
+      </div>
 
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city %>
-  </div>
+      <div class="field">
+        <%= form.label :city %>
+        <%= form.text_field :city %>
+      </div>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
-  </div>
+      <div class="field">
+        <%= form.label :date %>
+        <%= form.date_select :date %>
+      </div>
 
-  <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image %>
-  </div>
+      <div class="field">
+        <%= form.label :image %>
+        <i class="fa fa-image fa-2x"></i>
+        <input class="input-box__image__file" type="file" name="message[image]" id="message_image">
+        </label>
+      </div>
 
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
-  </div>
+      <div class="field">
+        <%= form.label :content %>
+        <%= form.text_area :content %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    <% end %>
   </div>
-<% end %>
+</div>
