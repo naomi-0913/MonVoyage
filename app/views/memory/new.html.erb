@@ -1,0 +1,13 @@
+<div class="contents row">
+  <div class ="container">
+    <%= form_for (@memory, url: {controller: memory, action:index } do |f| %>
+      <h3>
+        投稿する
+      </h3>
+      <%= f.text_field :country, placeholder: "国名" %>
+      <%= f.text_area :city, placeholder: "市名" %>
+      <%= f.text_area :date, placeholder: "日付" %>
+      <%= f.submit "SENT" %>
+    <% end %>
+  </div>
+</div>
