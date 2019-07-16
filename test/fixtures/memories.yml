@@ -2,6 +2,14 @@
 
 one:
   country: MyString
+  city: MyString
+  date: 2019-07-16
+  image: MyString
+  content: MyText
 
 two:
   country: MyString
+  city: MyString
+  date: 2019-07-16
+  image: MyString
+  content: MyText
