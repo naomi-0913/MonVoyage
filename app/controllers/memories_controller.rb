@@ -25,15 +25,10 @@ class MemoriesController < ApplicationController
   # POST /memories.json
   def create
     @memory = Memory.new(memory_params)
-
-    respond_to do |format|
-      if @memory.save
-        format.html { redirect_to @memory, notice: 'Memory was successfully created.' }
-        format.json { render :show, status: :created, location: @memory }
-      else
-        format.html { render :new }
-        format.json { render json: @memory.errors, status: :unprocessable_entity }
-      end
+    if @memory.save 
+      redirect_to action: 'index'
+    else
+      render 'new'
     end
   end
 
@@ -69,6 +64,11 @@ class MemoriesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def memory_params
-      params.require(:memory).permit(:country, :city, :date, :image, :content)
+      params.require(:memory).permit(:country, :city, :date, :image, :content).merge(user_id: current_user.id)
     end
+
+    def move_to_index
+      redirect_to action: :index unless user_signed_in?
+    end
+  
 end

@@ -44,9 +44,6 @@
           height: 30px;
           border-width: 2px;
         }
-        .input-box__image__file{
-          display: none;
-        }
       }
     }
   }
@@ -54,4 +51,8 @@
 
 #memory_date_1i, #memory_date_2i, #memory_date_3i{
   display: inline;
+}
+
+#memory_image{
+  display: none;
 }
