@@ -10,6 +10,8 @@ class MemoriesController < ApplicationController
   # GET /memories/1
   # GET /memories/1.json
   def show
+    @likes = Like.find_by(user_id: session[:user_id], product_id: @product.id)
+    @memory = memory.find(params[:id])
   end
 
   # GET /memories/new
