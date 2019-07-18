@@ -66,4 +66,3 @@ gem 'pry-byebug', group: :development
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'exifr'
