@@ -9,14 +9,14 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  </head>
-
+  </head> 
   <body>
     <nav class="hidden-menu">
       <div class="nav-wrapper">
         <a href="#" class="brand-logo">Mon-Voyage</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if user_signed_in? %>
+          <li><%= current_user.name %> さんログイン中</li>
           <li><%= link_to "投稿する", new_memory_path, method: :GET %></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <% else %>

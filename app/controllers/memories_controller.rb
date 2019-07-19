@@ -1,5 +1,5 @@
 class MemoriesController < ApplicationController
-  before_action :set_memory, only: [:show, :edit, :update, :destroy]
+  before_action :set_memory, only: [:edit, :update, :destroy]
 
   # GET /memories
   # GET /memories.json
@@ -10,8 +10,9 @@ class MemoriesController < ApplicationController
   # GET /memories/1
   # GET /memories/1.json
   def show
-    @likes = Like.find_by(user_id: session[:user_id], product_id: @product.id)
-    @memory = memory.find(params[:id])
+    @memories = Memory.all
+    @memory = Memory.find(params[:id])
+    @like = Like.new
   end
 
   # GET /memories/new

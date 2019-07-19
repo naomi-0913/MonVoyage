@@ -7,23 +7,23 @@
           <span class="card-title"><%= memory.country%></span>
           <div class="like">
             <% if user_signed_in? %>
-              <%# <% if memory.like_user(current_user.id) %>
+              <%# <% if memory.like_user(current_user.id) %> 
                 <%# <%= button_to memory_like_path(@like, memory_id: memory.id), method: :delete, class: "like-button", remote: true do %> 
-                  <%# <%= image_tag("icon_red_heart.svg") %> 
+                  <%# <%= image_tag("icon_red_heart.svg")  %>
                   <%# <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="far fa-heart fa-2x"></i></a> %>
-                  <%# <span class="likes-count">いいね件数:<%= memory.likes_count %></span> 
-                <%# <% end %> 
+                  <%# <span class="likes-count">いいね!  <%= memory.likes_count 件</span>   %>
+                <%# <% end %>  
               <%# <% else %> 
                 <%= button_to memory_likes_path(memory), class: "like-button", remote: true do %>
                   <%# <%= image_tag("icon_heart.svg") %> 
                   <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="far fa-heart fa-2x"></i></a>
-                  <span class="likes-count">いいね!:<%= memory.likes_count %>件</span>
+                  <span class="likes-count">いいね! : <%= memory.likes_count %> 件</span>
                 <% end %>
               <%# <% end %> 
             <% else %>
               <%# <%= image_tag("icon_heart.svg") %> 
               <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="far fa-heart fa-2x"></i></a>
-                <span class="likes-count">いいね!:<%= memory.likes_count %>件</span>
+                <span class="likes-count">いいね!  <%= memory.likes_count %> 件</span>
             <% end %>
           </div>
         </div>
