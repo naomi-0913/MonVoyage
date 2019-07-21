@@ -2,3 +2,4 @@ $(document).on('turbolinks:load', function(){
 
   $(".like-buttons").html("<%= j(render partial: 'memories', locals: { memories @memories, likes: @likes, like: @like }) %>");
 )}
+
