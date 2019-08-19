@@ -8,10 +8,16 @@
           <p class="cretated-user__name"><%= memory.user.name %></p>
           </span>
         </div>
-        <i class="material-icons">chat</i>
-        <%= link_to new_memory_path, method: :GET %>
-        <div class="likes-count">
-          <span class="likes-count">いいね! <%= memory.likes_count %>件</span>
+        <div class="card-footer">
+          <div class="icon-link">
+          <%= link_to memory_path(memory.id), method: :GET do %>
+            <i class="small material-icons">chat</i>
+          <% end %>
+          </div>
+          <div class="likes-count">
+            <span class="likes-count">いいね! <%= memory.likes_count %>件</span>
+          </div>
+
         </div>
       </div>
     </div>

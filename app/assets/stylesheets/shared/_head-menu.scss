@@ -1,0 +1,21 @@
+@import "shared/variable";
+.head-menu{
+  display: block;
+  background-color: #141212;
+  height: 100px;
+    .nav-wrapper{
+      .brand-logo{
+        height: 100%;
+        font-family: $main-font;
+        padding-top: 10px;
+        letter-spacing: 0.1em;
+      }
+      #nav-mobile{
+        height: 100%;
+        li{
+          padding-top: 10px;
+          letter-spacing: 0.1em;
+        }
+      }
+    }
+}

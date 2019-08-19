@@ -16,6 +16,16 @@
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "shared/variable";
+@import "index";
+@import "likes";
+@import "memories";
+@import "shared/form";
+@import "shared/head-menu";
+@import "new";
+@import "edit";
+@import "show";
+
+
 
 html{
   margin: 0;
@@ -34,7 +44,7 @@ height: 100px;
   .nav-wrapper{
     .brand-logo{
       height: 100%;
-      font-family: 'Mv Boli','Zapfino',sans-serif;
+      font-family: $main-font;
       padding-top: 10px;
       letter-spacing: 0.1em;
     }

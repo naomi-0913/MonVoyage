@@ -1,0 +1,15 @@
+<nav class="head-menu">
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo">Mon-Voyage</a>
+    <ul id="nav-mobile" class="right hide-on-med-and-down">
+      <% if user_signed_in? %>
+      <li><%= current_user.name %> さん</li>
+      <li><%= link_to "投稿する", new_memory_path, method: :GET %></li>
+      <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+      <% else %>
+      <li><%= link_to "sign-up", new_user_registration_path, method: :GET %></li>
+      <li><%= link_to "Login", new_user_session_path, method: :GET %></li>
+      <% end %>
+    </ul>
+  </div>
+</nav>

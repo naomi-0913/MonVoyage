@@ -1,0 +1,25 @@
+.card{
+  .card-image{
+    .card-title{
+    font-size: 15px;
+    padding: 5px;
+    }
+  }
+  .card-footer{
+    .icon-link{
+      height: 40px;
+      line-height: 40px;
+      .material-icons{
+        margin: 8px;
+        color: red;
+      }
+      }
+    .likes-count{
+      height: 40px;
+      line-height: 40px;
+      span{
+        padding: 5px;
+      }
+    }
+  }
+}

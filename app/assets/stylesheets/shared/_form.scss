@@ -1,0 +1,36 @@
+@import "shared/variable";
+
+.back-color{
+  padding: 10px;
+  margin: 20px;
+  width: 70%;
+}
+h1{
+  font-family: $main-font;
+  height: 150px;
+  line-height: 150px;
+margin: 0px;
+}
+form{
+  margin: auto;
+  width: 60%;
+  text-align: center;
+  line-height: 2.5em;
+  label{
+    font-size: 15px;
+    font-weight: bold;
+    color: #000000;
+  }
+  #memory_country, #memory_city{
+    height: 30px;
+    border-width: 2px;
+  }
+}
+
+#memory_date_1i, #memory_date_2i, #memory_date_3i{
+  display: inline;
+}
+
+#memory_image{
+  display: none;
+}

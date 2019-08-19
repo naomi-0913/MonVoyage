@@ -4,13 +4,12 @@ class MemoriesController < ApplicationController
   # GET /memories
   # GET /memories.json
   def index
-    @memories = Memory.all
+    @memories = Memory.all.limit(3).order('created_at DESC')
   end
 
   # GET /memories/1
   # GET /memories/1.json
   def show
-    @memories = Memory.all
     @memory = Memory.find(params[:id])
     @like = Like.new
   end
