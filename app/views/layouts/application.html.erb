@@ -17,6 +17,7 @@
         <a href="#" class="brand-logo">Mon-Voyage</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <% if user_signed_in? %>
+          <li><%= current_user.name %> さん</li>
           <li><%= link_to "投稿する", new_memory_path, method: :GET %></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
           <% else %>

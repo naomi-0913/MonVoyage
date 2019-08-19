@@ -9,24 +9,10 @@
 </div>
 <div class="topics">
   <div class="new-topic">
-    <div class="sub-title">New Topic
-    </div>
+    <div class="sub-title">New Topic</div>
     <div class="contents row" >
-    <% @memories.each do |memory| %>
-      <div class="row">
-        <div class="col s12 m6">
-          <div class="card">
-            <div class="card-image">
-              <div class="memory_image"><img src= "<%= memory.image.url %>" ></div>
-              <span class="card-title"><%= memory.country%></span>
-              <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="far fa-heart fa-2x"></i></a>
-            </div>
-            <div class="card-content">
-              <p class="memory-content"></p><%= memory.content %>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
+    <%= render partial: 'memories', locals:{memories: @memories} %>
+    </div>
   </div>
 </div>
+

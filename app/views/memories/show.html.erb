@@ -1,29 +1,33 @@
-<p id="notice"><%= notice %></p>
+<%= render 'head-menu' %>
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card">
+      <div class="card-image">
+        <div class="memory_image"><img src= "<%= @memory.image.url %>" ></div>
+        <span class="card-title"><%= @memory.country%></span>
+        <div class="like">
+          <% if user_signed_in? %>
+            <%# <% if memory.like_user(current_user.id) %>
+              <%# <%= button_to memory_like_path(@like, memory_id: memory.id), method: :delete, class: "like-button", remote: true do %> 
+                <%# <%= image_tag("icon_red_heart.svg") %> 
+                <%# <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="far fa-heart fa-2x"></i></a> %>
+                <%# <span class="likes-count">いいね件数:<%= memory.likes_count %></span> 
+              <%# <% end %> 
+            <%# <% else %> 
+              <%= button_to memory_likes_path(@memory), class: "like-button", remote: true do %>
+                <%# <%= image_tag("icon_heart.svg") %> 
+                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="far fa-heart fa-2x"></i></a>
+                <span class="likes-count">いいね! : <%= @memory.likes_count %> 件</span>
+              <% end %>
+            <%# <% end %> 
+          <% else %>
+            <%# <%= image_tag("icon_heart.svg") %> 
+            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="far fa-heart fa-2x"></i></a>
+              <span class="likes-count">いいね! : <%= @memory.likes_count %> 件</span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Country:</strong>
-  <%= @memory.country %>
-</p>
-
-<p>
-  <strong>City:</strong>
-  <%= @memory.city %>
-</p>
-
-<p>
-  <strong>Date:</strong>
-  <%= @memory.date %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @memory.image %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @memory.content %>
-</p>
-
-<%= link_to 'Edit', edit_memory_path(@memory) %> |
-<%= link_to 'Back', memories_path %>
