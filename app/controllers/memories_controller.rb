@@ -1,30 +1,22 @@
 class MemoriesController < ApplicationController
   before_action :set_memory, only: [:edit, :update, :destroy]
 
-  # GET /memories
-  # GET /memories.json
   def index
     @memories = Memory.all.limit(3).order('created_at DESC')
   end
 
-  # GET /memories/1
-  # GET /memories/1.json
   def show
     @memory = Memory.find(params[:id])
     @like = Like.new
   end
 
-  # GET /memories/new
   def new
     @memory = Memory.new
   end
 
-  # GET /memories/1/edit
   def edit
   end
 
-  # POST /memories
-  # POST /memories.json
   def create
     @memory = Memory.new(memory_params)
     if @memory.save 
@@ -34,8 +26,6 @@ class MemoriesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /memories/1
-  # PATCH/PUT /memories/1.json
   def update
     respond_to do |format|
       if @memory.update(memory_params)
@@ -48,8 +38,6 @@ class MemoriesController < ApplicationController
     end
   end
 
-  # DELETE /memories/1
-  # DELETE /memories/1.json
   def destroy
     @memory.destroy
     respond_to do |format|
@@ -59,12 +47,10 @@ class MemoriesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_memory
       @memory = Memory.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
     def memory_params
       params.require(:memory).permit(:country, :city, :date, :image, :content).merge(user_id: current_user.id)
     end

@@ -1,1 +1,6 @@
 $main-font: 'Mv Boli','Zapfino',sans-serif;
+
+@mixin bar_position{
+  position: absolute;
+  top: 2px;
+}
