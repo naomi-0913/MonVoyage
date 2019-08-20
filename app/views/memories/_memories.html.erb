@@ -4,20 +4,16 @@
       <div class="card">
         <div class="card-image">
           <div class="memory_image"><img src= "<%= memory.image.url %>" ></div>
-          <span class="card-title"><%= memory.country%>
-          <p class="cretated-user__name"><%= memory.user.name %></p>
-          </span>
         </div>
         <div class="card-footer">
+          <div class="likes-count">
+            <span class="likes-count">いいね! <%= memory.likes_count %>件</span>
+          </div>
           <div class="icon-link">
           <%= link_to memory_path(memory.id), method: :GET do %>
             <i class="small material-icons">chat</i>
           <% end %>
           </div>
-          <div class="likes-count">
-            <span class="likes-count">いいね! <%= memory.likes_count %>件</span>
-          </div>
-
         </div>
       </div>
     </div>
