@@ -30,7 +30,9 @@ form{
 #memory_date_1i, #memory_date_2i, #memory_date_3i{
   display: inline;
 }
-
+.file-btn{
+  cursor: pointer;
+}
 #memory_image{
   display: none;
 }
