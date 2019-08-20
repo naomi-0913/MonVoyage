@@ -4,6 +4,29 @@
     <div class="card">
       <div class="card-image">
         <div class="memory_image"><img src= "<%= @memory.image.url %>" ></div>
+        <div class="show-menu__bar">
+          <ul>
+            <div class="like">
+              <li class="btn-floating halfway-fab waves-effect waves-light red">
+                <i class="material-icons">favorite_border</i>
+              </li>
+            </div>
+            <div class="edit">
+              <li class="btn-floating halfway-fab waves-effect waves-light green">
+                <%=link_to edit_memory_path do %>
+                  <i class="material-icons">edit</i>
+                <%end%>
+              </li>
+            </div>
+            <div class="delete">
+              <li class="btn-floating halfway-fab waves-effect waves-light blue">
+                <%=link_to memory_path, method: :DELETE do %>
+                  <i class="material-icons">delete</i>
+                <%end%>
+              </li>
+            </div>
+          </ul>
+        </div>
         <div class="card-content">
           <div class="memory-info">
             <p><%= @memory.user.name %></p>
@@ -13,29 +36,6 @@
             <p><%= @memory.country%></p>
             <p><%= @memory.city%></p>
           </div>
-        </div>
-        <div class="like">
-          <% if user_signed_in? %>
-            <%# <% if memory.like_user(current_user.id) %>
-              <%# <%= button_to memory_like_path(@like, memory_id: memory.id), method: :delete, class: "like-button", remote: true do %> 
-                <%# <%= image_tag("icon_red_heart.svg") %> 
-                <%# <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="far fa-heart fa-2x"></i></a> %>
-                <%# <span class="likes-count">いいね件数:<%= memory.likes_count %></span> 
-              <%# <% end %> 
-            <%# <% else %> 
-              <%= button_to memory_likes_path(@memory), class: "like-button", remote: true do %>
-                <%# <%= image_tag("icon_heart.svg") %> 
-                <a class="btn-floating halfway-fab waves-effect waves-light red">
-                  <i class="far fa-heart fa-2x"></i></a>
-                <span class="likes-count">いいね! : <%= @memory.likes_count %> 件</span>
-              <% end %>
-            <%# <% end %> 
-          <% else %>
-            <%# <%= image_tag("icon_heart.svg") %> 
-            <a class="btn-floating halfway-fab waves-effect waves-light red">
-              <i class="far fa-heart fa-2x"></i></a>
-              <span class="likes-count">いいね! : <%= @memory.likes_count %> 件</span>
-          <% end %>
         </div>
       </div>
     </div>

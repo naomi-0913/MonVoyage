@@ -1,15 +1,13 @@
 @import "shared/variable";
 
 .back-color{
-  padding: 10px;
-  margin: 20px;
   width: 70%;
 }
 h1{
   font-family: $main-font;
   height: 150px;
   line-height: 150px;
-margin: 0px;
+  margin: 0px;
 }
 form{
   margin: auto;
@@ -21,18 +19,32 @@ form{
     font-weight: bold;
     color: #000000;
   }
-  #memory_country, #memory_city{
+  #memory_country, #memory_city, #memory_content{
     height: 30px;
-    border-width: 2px;
+    border-width: 1px;
+    border-color: #fafafa;
   }
-}
+  #memory_date_1i, #memory_date_2i, #memory_date_3i{
+    display: inline;
+  }
+  .image-field{
+    display: flex;
+    .file-btn{
+      cursor: pointer;
+      padding: 10px 20px;
+    }
+    #memory_image{
+      display: none;
+    }
+    .image-preview{
+      margin: 10px;
+      width: 50%;
+      height: 150px;
+      #prev_zone{
+        max-height: 150px;
 
-#memory_date_1i, #memory_date_2i, #memory_date_3i{
-  display: inline;
-}
-.file-btn{
-  cursor: pointer;
-}
-#memory_image{
-  display: none;
+        
+      }
+    }
+  }
 }

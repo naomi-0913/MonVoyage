@@ -28,18 +28,23 @@
         <%= form.date_select :date %>
       </div>
 
-      <div class="field">
+      <div class="field image-field">
         <label for="memory_image" class="file-btn">
           <i class="fa fa-image fa-2x"></i>
         </label>
-        <%= form.file_field :image, id: :memory_image %>
+        <%= form.file_field :image, id: "memory_image" %>
+        <div class="image-preview">
+          <% if memory.image.present?%>
+          <%= image_tag memory.image_url, id: "prev_zone"%>
+          <%else%>
+          <%= image_tag '', id: "prev_zone"%>
+          <%end%>
+        </div>
       </div>
-
       <div class="field">
         <%= form.label :content %>
         <%= form.text_area :content %>
       </div>
-
       <button class="btn waves-effect waves-light" type="submit" name="action">Submit
         <i class="material-icons right">send</i>
       </button>
