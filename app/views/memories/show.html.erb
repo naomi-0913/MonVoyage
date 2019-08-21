@@ -7,9 +7,7 @@
         <div class="show-menu__bar">
           <ul>
             <div class="like">
-              <li class="btn-floating halfway-fab waves-effect waves-light red">
-                <i class="material-icons">favorite_border</i>
-              </li>
+              <%= render 'likes/like', memory: @memory, like: @like %>
             </div>
             <div class="edit">
               <li class="btn-floating halfway-fab waves-effect waves-light green">

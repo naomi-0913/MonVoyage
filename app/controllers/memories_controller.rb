@@ -1,13 +1,12 @@
 class MemoriesController < ApplicationController
-  before_action :set_memory, only: [:edit, :update, :destroy]
+  before_action :set_memory, only: [:edit, :update, :destroy, :show]
 
   def index
     @memories = Memory.all.limit(3).order('created_at DESC')
   end
 
   def show
-    @memory = Memory.find(params[:id])
-    @like = Like.new
+    @like = Like.find_by(user_id: current_user.id, memory_id: params[:memory_id])
   end
 
   def new

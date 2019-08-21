@@ -1,21 +1,22 @@
 class LikesController < ApplicationController
+  before_action :set_memory
+
   def create
     @like = Like.create(user_id: current_user.id, memory_id: params[:memory_id])
-    @likes = Like.where(memory_id: params[:memory_id])
-    @memories = Memory.all
+    @memory.reload
   end
-
-  # def create #イイねがつけられる(イイねのレコードがクリエイトされる)
-  #   @like = Like.create(user_id: session[:user_id], product_id: params[:product_id])
-  #   @likes_btn = Like.find_by(user_id: session[:user_id], product_id: @product_like.id)
-  #   @product_like.reload　#リロードする。
-  # end
 
   def destroy
     like = Like.find_by(user_id: current_user.id, memory_id: params[:memory_id])
     like.destroy
-    @likes = Like.where(memory_id: params[:memory_id])
-    @memories = Memory.all
+    @memory.reload
   end
+
+  private 
+  def set_memory
+    @memory = Memory.find(params[:memory_id])
+  end
+
+
 end
 
