@@ -7,6 +7,7 @@ class MemoriesController < ApplicationController
 
   def show
     @like = Like.find_by(user_id: current_user.id, memory_id: params[:memory_id])
+    @likes = Like.where(memory_id: @memory.id)
   end
 
   def new
