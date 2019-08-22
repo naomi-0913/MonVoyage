@@ -1,29 +1,37 @@
-.card{
-  .card-image{
-    .card-title{
-    font-size: 15px;
-    padding: 5px;
-    }
-  }
-  .card-footer{
-    display: flex;
-    .likes-count{
-      height: 40px;
-      line-height: 40px;
-      width: 50%;
-      span{
-        padding: 5px;
+.row{
+  width: 45%;
+  margin-bottom: 0px;
+  .col.s12.m6{
+    width: 80%;
+    margin-left: 70px;
+    .card{
+      .card-image{
+        .memory_image img{
+          max-height: 700px;
+          max-width: 500px;
+        }
+      }
+      .card-footer{
+        display: flex;
+        .likes-count{
+          height: 40px;
+          line-height: 40px;
+          width: 50%;
+          span{
+            padding: 5px;
+          }
+        }
+        .icon-link{
+          height: 40px;
+          line-height: 40px;
+          width: 50%;
+          .material-icons{
+            margin: 8px;
+            color: red;
+            padding-left: 60%;
+          }
+          }
       }
     }
-    .icon-link{
-      height: 40px;
-      line-height: 40px;
-      width: 50%;
-      .material-icons{
-        margin: 8px;
-        color: red;
-        padding-left: 60%;
-      }
-      }
   }
 }

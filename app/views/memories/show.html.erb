@@ -1,49 +1,50 @@
 <%= render 'head-menu' %>
-<div class="row">
-  <div class="col s12 m6">
-    <div class="card">
-      <div class="card-image">
-        <div class="memory_image"><img src= "<%= @memory.image.url %>" ></div>
-        <div class="show-menu__bar">
-          <ul>
-            <div class="like">
-              <%= render 'likes/like', memory: @memory, like: @like %>
-            </div>
-            <% unless @memory.user_id != current_user.id %>
-              <div class="edit">
-                <li class="btn-floating halfway-fab waves-effect waves-light green">
-                  <%=link_to edit_memory_path do %>
-                    <i class="material-icons">edit</i>
-                  <%end%>
-                </li>
+<div class="wrapper">
+  <div class="show-row">
+    <div class="col s12 m6">
+      <div class="card">
+        <div class="card-image">
+          <div class="memory_image"><img src= "<%= @memory.image.url %>" ></div>
+          <div class="show-menu__bar">
+            <ul>
+              <div class="like">
+                <%= render 'likes/like', memory: @memory, like: @like %>
               </div>
-              <div class="delete">
-                <li class="btn-floating halfway-fab waves-effect waves-light blue">
-                  <%=link_to memory_path, method: :DELETE do %>
-                    <i class="material-icons">delete</i>
-                  <%end%>
-                </li>
-              </div>
-            <% end %>
-          </ul>
-        </div>
-        <div class="card-content">
-          <div class="memory-info">
-            <p><%= @memory.user.name %></p>
-            <p><%= @memory.content %></p>
+              <% unless @memory.user_id != current_user.id %>
+                <div class="edit">
+                  <li class="btn-floating halfway-fab waves-effect waves-light green">
+                    <%=link_to edit_memory_path do %>
+                      <i class="material-icons">edit</i>
+                    <%end%>
+                  </li>
+                </div>
+                <div class="delete">
+                  <li class="btn-floating halfway-fab waves-effect waves-light blue">
+                    <%=link_to memory_path, method: :DELETE do %>
+                      <i class="material-icons">delete</i>
+                    <%end%>
+                  </li>
+                </div>
+              <% end %>
+            </ul>
           </div>
-          <div class="memory-info">
-            <p><%= @memory.country%></p>
-            <p><%= @memory.city%></p>
+          <div class="card-content">
+            <div class="memory-info">
+              <p><%= @memory.user.name %></p>
+              <p><%= @memory.content %></p>
+            </div>
+            <div class="memory-info">
+              <p><%= @memory.country%></p>
+              <p><%= @memory.city%></p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="likes-users">
+      <% @likes.each do |like| %>
+        <p> <%= like.user.name %> さん、が「いいね！」しました</p>
+      <% end %>
+    </div>
   </div>
-  <div class="likes-users">
-    <% @likes.each do |like| %>
-      <p> <%= like.user.name %> さん、が「いいね！」しました</p>
-    <% end %>
-  </div>
-</div>
-
+</div>  

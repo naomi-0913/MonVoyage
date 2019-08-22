@@ -1,72 +1,79 @@
 @import 'shared/variable';
-.row{
+.wrapper{
   background-color: #fafafa;
-  display: flex;
-  .col.s12.m6{
-    margin-left: 10%;
-    .card{
-      .card-image{
-        .show-menu__bar{
-          position: relative;
-          display: flex;
-          width: 100%;
-          height: 80px;
-          .like{
-            .btn-floating.halfway-fab.waves-effect.waves-light.red{
-              @include bar-position;
-              left: 10px;
-              i{
-                padding-left: 8px;
+  .show-row{
+    background-color: #fafafa;
+    display: flex;
+    .col.s12.m6{
+      margin-left: 10%;
+      .card{
+        .card-image{
+          img{
+            max-height: 700px;
+            max-width: 700px;
+          }
+          .show-menu__bar{
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: 80px;
+            .like{
+              .btn-floating.halfway-fab.waves-effect.waves-light.red{
+                @include bar-position;
+                left: 10px;
+                i{
+                  padding-left: 8px;
+                }
+              }
+              .likes_count{
+                margin: 40px 10px;
+                font-weight: bold;
+              }
+            }
+            .edit{
+              .btn-floating.halfway-fab.waves-effect.waves-light.green{
+                @include bar-position;
+                left: 55px;
+                i{
+                  padding-left: 8px;
+                }
+              }
+            }
+            .delete{
+              .btn-floating.halfway-fab.waves-effect.waves-light.blue{
+                @include bar-position;
+                left: 100px;
+                i{
+                  padding-left: 8px;
+                }
+              }
+            }
+          }
+          .card-content{
+            font-size: 15px;
+            padding: 5px;
+            width: 100%;
+            height: 40%;
+            .memory-info{
+              display: flex;
+              p{
+                margin: 5px;
+                font-weight: bold;
               }
             }
             .likes_count{
-              margin: 40px 10px;
-              font-weight: bold;
-            }
-          }
-          .edit{
-            .btn-floating.halfway-fab.waves-effect.waves-light.green{
-              @include bar-position;
-              left: 55px;
-              i{
-                padding-left: 8px;
+              p{
+                margin: 5px;
+                font-weight: bold;
               }
-            }
-          }
-          .delete{
-            .btn-floating.halfway-fab.waves-effect.waves-light.blue{
-              @include bar-position;
-              left: 100px;
-              i{
-                padding-left: 8px;
-              }
-            }
-          }
-        }
-        .card-content{
-          font-size: 15px;
-          padding: 5px;
-          width: 100%;
-          height: 40%;
-          .memory-info{
-            display: flex;
-            p{
-              margin: 5px;
-              font-weight: bold;
-            }
-          }
-          .likes_count{
-            p{
-              margin: 5px;
-              font-weight: bold;
             }
           }
         }
       }
     }
-  }
-  .likes-users{
-    width: 50%;
-    margin: 30px;
+    .likes-users{
+      width: 50%;
+      margin: 30px;
+    }
   }
 }

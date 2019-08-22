@@ -48,20 +48,11 @@
   width: 100%;
   display: flex;
   .new-topic{
-    .contents.row{
+    width: 100%;
+    .contents-row{
       width: 100%;
       display: flex;
-      .row{
-        width: 100%;
-        margin-bottom: 0px;
-        .col.s12.m6{
-          width: 80%;
-          margin-left: 70px;
-        }
-        .memory_image img{
-          max-height: 700px;
-        }
-      }
+      background-color: #fafafa;
     }
   }
 }
