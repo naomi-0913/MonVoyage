@@ -65,5 +65,5 @@ gem 'materialize-sass', '~> 1.0.0'
 gem 'pry-byebug', group: :development
 gem 'devise'
 gem 'carrierwave'
-gem 'mini_magick'
+gem "mini_magick", ">= 4.9.4"
 gem "nokogiri", ">= 1.10.4"
