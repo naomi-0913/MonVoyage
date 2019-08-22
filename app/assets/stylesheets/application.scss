@@ -16,14 +16,14 @@
 @import "materialize";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "shared/variable";
-@import "index";
+@import "memory/index";
+@import "memory/memories";
+@import "memory/new";
+@import "memory/edit";
+@import "memory/show";
 @import "like";
-@import "memories";
 @import "shared/form";
 @import "shared/head-menu";
-@import "new";
-@import "edit";
-@import "show";
 @import "slick-theme"; 
 @import "slick";
 

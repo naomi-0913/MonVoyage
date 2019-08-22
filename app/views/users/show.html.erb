@@ -1,4 +1,16 @@
 <%= render 'memories/head-menu' %>
-<div class="wrapper">
-  <div class="show-row">
+<div class="mypage-wrap">
+  <div class="mypage-top">
+  </div>
+  <div class="memory-list">
+    <div class="list-box">
+      <% @memory.each do |memory| %>
+        <div class="box-content">
+          <%= link_to memory_path(memory.id), method: :GET do %>
+            <%= image_tag memory.image.url %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
