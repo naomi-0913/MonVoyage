@@ -40,7 +40,7 @@
   height: 110px;
   font-size: 30px;
   font-family: $main-font;
-  background-color: #fafafa;
+  background-color: $back-col;
 }
 
 .topics{
@@ -49,10 +49,11 @@
   display: flex;
   .new-topic{
     width: 100%;
+    background-color: $back-col;
     .contents-row{
       width: 100%;
       display: flex;
-      background-color: #fafafa;
+      background-color: $back-col;
     }
   }
 }
