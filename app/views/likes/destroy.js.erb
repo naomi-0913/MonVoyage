@@ -1,1 +1,1 @@
-$(".like-buttons").html("<%= j(render partial: 'memories', locals: { memories @memories, likes: @likes, like: @like }) %>");
+$(".like").html("<%= j(render 'likes/like', memory: @memory, like: @like ) %>");

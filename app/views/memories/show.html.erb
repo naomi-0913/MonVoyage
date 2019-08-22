@@ -7,24 +7,24 @@
         <div class="show-menu__bar">
           <ul>
             <div class="like">
-              <li class="btn-floating halfway-fab waves-effect waves-light red">
-                <i class="material-icons">favorite_border</i>
-              </li>
+              <%= render 'likes/like', memory: @memory, like: @like %>
             </div>
-            <div class="edit">
-              <li class="btn-floating halfway-fab waves-effect waves-light green">
-                <%=link_to edit_memory_path do %>
-                  <i class="material-icons">edit</i>
-                <%end%>
-              </li>
-            </div>
-            <div class="delete">
-              <li class="btn-floating halfway-fab waves-effect waves-light blue">
-                <%=link_to memory_path, method: :DELETE do %>
-                  <i class="material-icons">delete</i>
-                <%end%>
-              </li>
-            </div>
+            <% unless @memory.user_id != current_user.id %>
+              <div class="edit">
+                <li class="btn-floating halfway-fab waves-effect waves-light green">
+                  <%=link_to edit_memory_path do %>
+                    <i class="material-icons">edit</i>
+                  <%end%>
+                </li>
+              </div>
+              <div class="delete">
+                <li class="btn-floating halfway-fab waves-effect waves-light blue">
+                  <%=link_to memory_path, method: :DELETE do %>
+                    <i class="material-icons">delete</i>
+                  <%end%>
+                </li>
+              </div>
+            <% end %>
           </ul>
         </div>
         <div class="card-content">
@@ -41,10 +41,9 @@
     </div>
   </div>
   <div class="likes-users">
-    <p>猫太郎さん、が「いいね！」しました</p>
-    <p>猫太郎さん、が「いいね！」しました</p>
-    <p>猫太郎さん、が「いいね！」しました</p>
-    <p>猫太郎さん、が「いいね！」しました</p>
+    <% @likes.each do |like| %>
+      <p> <%= like.user.name %> さん、が「いいね！」しました</p>
+    <% end %>
   </div>
 </div>
 
