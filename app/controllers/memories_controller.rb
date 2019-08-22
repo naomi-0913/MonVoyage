@@ -2,7 +2,7 @@ class MemoriesController < ApplicationController
   before_action :set_memory, only: [:edit, :update, :destroy, :show]
 
   def index
-    @memories = Memory.all.limit(3).order('created_at DESC')
+    @memories = Memory.all.limit(6).order('created_at DESC')
   end
 
   def show

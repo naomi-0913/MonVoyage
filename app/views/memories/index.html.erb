@@ -11,7 +11,16 @@
   <div class="new-topic">
     <div class="sub-title">New Topics</div>
     <div class="contents-row" >
-    <%= render partial: 'memories', locals:{memories: @memories} %>
+      <div class="slick-box">
+        <% @memories.each do |memory| %>
+          <div class="memory-images">
+            <%= link_to memory_path(memory.id), method: :GET do %>
+              <%= image_tag memory.image.url, id: "image" %>
+            <% end %>
+          </div>
+        <% end %>
+        <%# <%= render partial: 'memories', locals:{memories: @memories} %> 
+      </div>
     </div>
   </div>
 </div>

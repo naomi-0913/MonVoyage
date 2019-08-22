@@ -50,10 +50,18 @@
   .new-topic{
     width: 100%;
     background-color: $back-col;
-    .contents-row{
-      width: 100%;
-      display: flex;
+    .slick-box{
+      // width: 100%;
+      // display: flex;
       background-color: $back-col;
+      .memory-images{
+        height: 500px;
+        width: 500px;
+        #image{
+          max-height: 500px;
+          max-width: 500px;
+        }
+      }
     }
   }
 }
