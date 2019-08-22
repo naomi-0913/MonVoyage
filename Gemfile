@@ -66,6 +66,3 @@ gem 'pry-byebug', group: :development
 gem 'devise'
 gem 'carrierwave'
 gem 'mini_magick'
-group :production do
-  gem 'pg'
-end
