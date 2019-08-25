@@ -50,16 +50,24 @@
   .new-topic{
     width: 100%;
     background-color: $back-col;
-    .slick-box{
-      // width: 100%;
-      // display: flex;
-      background-color: $back-col;
-      .memory-images{
+    .contents-row{
+      height: 600px;
+      .slick-box{
+        display: flex;
+        background-color: $back-col;
         height: 500px;
-        width: 500px;
-        #image{
-          max-height: 500px;
-          max-width: 500px;
+        .memory-images{
+          height: 500px;
+          width: 500px;
+          padding: 10px 30px;
+          background-color: white;
+          #image{
+            height: 100%;
+            width: 100%;
+          }
+          #image:hover{
+            opacity: 0.6;
+          }
         }
       }
     }
