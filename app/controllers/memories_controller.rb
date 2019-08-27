@@ -3,7 +3,6 @@ class MemoriesController < ApplicationController
 
   def index
     @memories = Memory.all.limit(6).order('created_at DESC')
-    @memory = Memory.find(17)
   end
 
   def show
