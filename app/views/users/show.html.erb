@@ -2,11 +2,14 @@
 <div class="mypage-wrap">
   <div class="mypage-top">
     <div class="avatar">
-      
+      <div class="avater-circle">
+        <%= image_tag "/images/user.png", class: "avater-image" %>
+      </div>
     </div>
     <div class="user-info">
-      <p><%= @user.name %></p>
+      <p class="user-info--name"><%= @user.name %></p>
       <p>投稿<%= @memory.count %>件 </p>
+      <p>行ってみたい！<%= @likes.count %>件</p>
     </div>
   </div>
   <div class="memory-list">

@@ -42,9 +42,7 @@
       </div>
     </div>
     <div class="likes-users">
-      <% @likes.each do |like| %>
-        <p> <%= like.user.name %> さん、が「いいね！」しました</p>
-      <% end %>
+      <%= render 'likes/likeusers', memory: @memory, like: @like %>
     </div>
   </div>
 </div>  
