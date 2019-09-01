@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   resources :memories do
     resources :likes, only:[:create, :destroy]
   end
+  resources :users , only:[:show]
 end

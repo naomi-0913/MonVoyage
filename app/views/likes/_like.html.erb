@@ -5,14 +5,14 @@
         <i class="material-icons">favorite_border</i>
       <% end %>
     </li>
-    <p class="likes_count"> いいね！<%= memory.likes_count %> 件</p>
+    <p class="likes_count"> 行ってみたい！<%= memory.likes_count %> </p>
   <% else %>
     <div class="btn-floating halfway-fab waves-effect waves-light red">
       <%= link_to memory_likes_path(memory, current_user.id), method: :post, remote: true do %>
         <i class="material-icons">favorite_border</i>
       <% end %>
     </div>
-    <p class="likes_count"> いいね！<%= memory.likes_count %> 件</p>
+    <p class="likes_count"> 行ってみたい！<%= memory.likes_count %> </p>
   <% end %>
 <% else %>
   <li class="btn-floating halfway-fab waves-effect waves-light red">
@@ -20,5 +20,5 @@
       <i class="material-icons">favorite_border</i>
     <% end %>
   </li>
-  <p class="likes_count"> いいね！<%= memory.likes_count %> 件</p>
+  <p class="likes_count"> 行ってみたい！<%= memory.likes_count %> </p>
 <% end %>
